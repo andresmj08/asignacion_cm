@@ -20,13 +20,14 @@
 <body>
   <header>
     <a class="btn btn-primary btn-lg btn-block" role="button"s href="index.php/Op_usuarios/login">Usuarios CM</a>
-
+<h1>Esto es un buen Cambio</h1>
   </header>
       <div class="container">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info" >
               <div class="panel-heading">
 					<div class="panel-title">Iniciar Sesion</div>
+
                     </div>
 
                     <div style="padding-top:30px" class="panel-body" >
