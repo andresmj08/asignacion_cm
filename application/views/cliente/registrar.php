@@ -92,7 +92,7 @@
                             </form>     
 <form action="<?=base_url()?>index.php/Op_cliente">
 	<div class="col-sm-12 controls">
-		<input type="submit" id="volver" class="btn btn-success btn-lg btn-block" value="Regresar"></input>
+		<input type="submit" id="volver" class="btn btn-danger btn-lg btn-block" value="Regresar"></input>
 	</div>
 </form>
 
