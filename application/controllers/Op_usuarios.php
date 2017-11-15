@@ -58,7 +58,23 @@ class Op_usuarios extends CI_Controller {
 	 }
 
 	 public function proximas(){
-		 
+
+	 }
+
+
+	 ////////////////////////////// Tecnicos  /////////////////////
+	 public function ver_tecnicos(){
+		 $dato["tecnicos"]=$this->Operarios->listar();
+		 $this->load->view('usuario/tecnicos_view',$dato);
+	 }
+
+	 public function agregar_tecnico(){
+		 $cedula=$this->input->post('cedula');
+		 $nombre=$this->input->post('nombre');
+		 $combo= array('Cedula'=>$cedula, 'Nombres'=>$nombre, 'Estado'=> "Activo");
+		 $this->Operarios->agregar($combo);
+		 redirect('Op_usuarios/ver_tecnicos');
+
 	 }
 
 }
