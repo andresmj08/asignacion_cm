@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="<?=base_url()?>uploads/favicon.ico" type="image/gif">
-<title>Gestion Citas</title>
+<title>Consulta Cliente</title>
 
 <!-- Bootstrap -->
 <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet">
@@ -26,12 +26,46 @@
   <div class="page-header">
 		<form action="<?=base_url()?>index.php/Op_usuarios"><input type="submit" id="volver" class="btn btn-danger" value="Regresar"></input></form>
 	</div>
-	<div class="container">
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-md-offset-4">
+		<div class="form-group">
+      <input type="text" class="form-control" placeholder="Digite el Nit"></input>
+    </div>
+      <div class="form-group">
+		      <input type="submit" class="btn btn-primary btn-lg btn-block" value="Buscar"></input>
+		  </div>
+    </div>
+  </div>
+<div class="divider"></div>
+<div class="panel panel-default">
 
-		<a href="historico"><button type="button" class="btn btn-info btn-lg btn-block">Historico de Citas</button></a>
-		<a href="proximas"><button type="button" class="btn btn-default btn-lg btn-block">Proximas Citas</button></a>
-		
 
+
+  <table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Nit</th>
+			<th>Nombres</th>
+			<th>Fecha de Nacimiento</th>
+			<th>Direccion</th>
+			<th>Telefono</th>
+			<th>Telefono</th>
+			<th>Correo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php	foreach($prds as $valor){ ?>
+
+      <tr>
+        <td><?php echo $valor['codigo']; ?></td>
+        <td><?php echo $valor['nombre']; ?></td>
+        <td><?php echo $valor['cantidad']; ?></td>
+      </tr>
+		<?php }; ?>
+		</tbody>
+  </table>
+</div>
 
 </div>
 

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="<?=base_url()?>uploads/favicon.ico" type="image/gif">
-<title>Gestion Citas</title>
+<title>Consultas</title>
 
 <!-- Bootstrap -->
 <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet">
@@ -28,9 +28,11 @@
 	</div>
 	<div class="container">
 
-		<a href="historico"><button type="button" class="btn btn-info btn-lg btn-block">Historico de Citas</button></a>
-		<a href="proximas"><button type="button" class="btn btn-default btn-lg btn-block">Proximas Citas</button></a>
-		
+		<a href="ver_tercero"><button type="button" class="btn btn-warning btn-lg btn-block">Consultar Terceros</button></a>
+		<a href="#"><button type="button" class="btn btn-default btn-lg btn-block">Consultar Vehiculos</button></a>
+		<a href="ver_tecnicos"><button type="button" class="btn btn-warning btn-lg btn-block">Consultar Tecnicos</button></a>
+		<a href="#"><button type="button" class="btn btn-default btn-lg btn-block">Consultar Operarios</button></a>
+
 
 
 </div>

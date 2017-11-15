@@ -58,7 +58,38 @@ class Op_usuarios extends CI_Controller {
 	 }
 
 	 public function proximas(){
-		 
+		 $hoy = date("ymd");
+		 $dato["proximas"]=$this->Cita->listar_proximas($hoy);
+		 $this->load->view('usuario/proximas_citas',$dato);
+	 }
+	 public function historico(){
+		 $dato["todas"]=$this->Cita->listar();
+		 $this->load->view('usuario/historico',$dato);
+	 }
+
+
+	 ////////////////////////////// Tecnicos  /////////////////////
+	 public function ver_tecnicos(){
+		 $dato["tecnicos"]=$this->Operarios->listar();
+		 $this->load->view('usuario/tecnicos_view',$dato);
+	 }
+
+	 public function agregar_tecnico(){
+		 $cedula=$this->input->post('cedula');
+		 $nombre=$this->input->post('nombre');
+		 $combo= array('Cedula'=>$cedula, 'Nombres'=>$nombre, 'Estado'=> "Activo");
+		 $this->Operarios->agregar($combo);
+		 redirect('Op_usuarios/ver_tecnicos');
+
+	 }
+
+	 ///////////////////////// CONSULTAS /////////////////////
+	 public function consultas(){
+		 $this->load->view('usuario/consultas');
+	 }
+
+	 public function ver_tercero(){
+		 $this->load->view('usuario/consulta_tercero');
 	 }
 
 }

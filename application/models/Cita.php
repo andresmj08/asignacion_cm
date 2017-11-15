@@ -42,4 +42,17 @@ class Cita extends CI_Model {
 		return $this->db->get()->result();
 	}
 
+	public function listar_proximas($dato){
+		$this->db->from('cita');
+		$this->db->where('Fecha_inicial <',$dato);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	public function listar(){
+		$this->db->from('cita');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 }
