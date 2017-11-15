@@ -27,10 +27,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="defaultNavbar1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Gestionar Citas</a></li>
+        <li><a href="Op_usuarios/gestion_citas">Gestionar Citas</a></li>
         <li><a href="#">Agendar Cita</a></li>
-        <li><a href="#">Consultar Citas</a></li>
-        <li><a href="#"  >Actualizar Datos</a>   </li>
+        <li><a href="#">Tecnicos</a></li>
+        <li><a href="#"  >Operarios</a>   </li>
         <li><a href="#"  >Gestionar Informes</a>   </li>
       </ul>
 

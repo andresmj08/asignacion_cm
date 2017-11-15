@@ -51,6 +51,14 @@ class Op_usuarios extends CI_Controller {
 	public function agendar_view(){
 		$this->load->view('cliente/agendar');
 	}
+////////////////////////////   CITAS  //////////////////////////////////////
 
+	 public function gestion_citas(){
+		 $this->load->view('usuario/gestion_citas');
+	 }
+
+	 public function proximas(){
+		 
+	 }
 
 }
