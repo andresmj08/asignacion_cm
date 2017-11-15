@@ -12,7 +12,6 @@ class Login extends CI_Controller {
 		if($this->session->userdata('Nit')){
 			$this->load->view('Cliente/menu');
 		}
-
 		$this->load->view('login/login_view');
 	}
 

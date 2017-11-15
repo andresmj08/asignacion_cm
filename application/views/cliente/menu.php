@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="icon" href="<?=base_url()?>uploads/favicon.ico" type="image/gif">
@@ -8,7 +7,7 @@
 <title>Menu Clientes</title>
 
 <!-- Bootstrap -->
-<link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet">
+<link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet"/>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,6 +15,36 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<link rel='stylesheet' href='<?=base_url()?>assets/css/fullcalendar.css' />
+<link href='<?=base_url()?>assets/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src="<?=base_url()?>assets/js/jquery.min.js"></script>
+<script src="<?=base_url()?>assets/js/moment.min.js"></script>
+<script src="<?=base_url()?>assets/js/fullcalendar.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$.post('<?=base_url()?>index.php/Op_Cliente/geteventos',
+			function(data){
+			
+		
+		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay,listWeek'
+			},
+			defaultDate: new Date(),
+				navLinks: true, // can click day/week names to navigate views
+				editable: true,
+				eventLimit: true, // allow "more" link when too many events
+				events: $.parseJSON(data)
+			});
+		});
+	});
+
+
+</script>
 </head>
 <body>
 
@@ -50,7 +79,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-
+		<div id="calendar"></div>
     </div>
   </div>
 
@@ -61,8 +90,7 @@ redirect(site_url());
 }
 ?>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="<?=base_url()?>assets/js/jquery-1.11.3.min.js"></script>
+
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?=base_url()?>assets/js/bootstrap.js"></script>
