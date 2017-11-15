@@ -214,5 +214,13 @@ public function actualizar(){
 		$r=$this->cita->geteventos();
 		echo json_encode($r);
 	}
+	
+	public function upevent(){
+		$param['id'] = $this->input->post('id');
+		$param['fecin'] = $this->input->post('fecin');
+		$param['fecfi'] = $this->input->post('fecfi');
+		$r = $this->cita->upevent($param);
+		echo $r;
+	}
 
 }

@@ -24,7 +24,7 @@
 
 <script>
 	$(document).ready(function(){
-		$.post('<?=base_url()?>index.php/Op_Cliente/geteventos',
+		$.post('Op_Cliente/geteventos',
 			function(data){
 			
 		
@@ -39,7 +39,30 @@
 				navLinks: true, // can click day/week names to navigate views
 				editable: true,
 				eventLimit: true, // allow "more" link when too many events
-				events: $.parseJSON(data)
+				events: $.parseJSON(data),
+				eventDrop: function(event,delta,revertFunc){
+					var id=event.id;
+					var fein=event.start.format();
+					var fefi=event.end.format();
+					
+					if(!confirm("¿Esta seguro de cambiar la fecha?")){
+					   revertFunc();
+					   }else{
+						$.post('Op_Cliente/upevent',
+						{
+							id:id,
+							fecin:fein,
+							fecfi:fefi
+						},
+						function(data){
+							if(data==1){
+								alert('Se actualizo correctamente');
+							}else{
+								alert('Error');
+							}
+						});
+					}
+				}
 			});
 		});
 	});
