@@ -12,6 +12,13 @@
 <!-- Bootstrap -->
 <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet">
 
+<script>
+	$(document).ready(function(){
+		$("#nombres").readonly;
+	});
+</script>
+
+
 <body>
 	<div class="page-header">
 		<form action="<?=base_url()?>index.php/Op_usuarios"><input type="submit" id="volver" class="btn btn-danger" value="Regresar"></input></form>
@@ -69,25 +76,34 @@
 		<?php	foreach($tecnicos as $valor){ ?>
 
       <tr>
-        <td><?php echo $valor['Cedula']; ?></td>
-        <td><?php echo $valor['Nombres']; ?></td>
-        <td><?php echo $valor['Estado']; ?></td>
-        <td>
-          <div class="btn-toolbar" role="toolbar">
-  <div class="btn-group">
-    <button type="button" class="btn btn-warning" alt="Editar">
-      <span class="glyphicon glyphicon-pencil"></span>
-    </button>
+				<form class="form-inline">
+					  <div class="form-group">
+        <td><input type="text" name="cedula" id="cedula" class="form-control" value="<?php echo $valor['Cedula']; ?>"></input></td>
+        <td><input type="text" name="nombres" id="nombres"class="form-control" value="<?php echo $valor['Nombres']; ?>"></input></td>
+        <td><select name="estado" class="form-control">
+						<option value="<?php echo $valor['Estado']; ?>"><?php echo $valor['Estado']; ?></option>
+						<option value="Inactivo">Inactivo</option>
+					</select>
+				</td>
 
-    <button type="button" class="btn btn-danger">
-      <span class="glyphicon glyphicon-remove"></span>
-    </button>
- </div>
- </div>
+        <td>
+					          <div class="btn-toolbar" role="toolbar">
+					  <div class="btn-group">
+					    <button type="button" class="btn btn-warning" alt="Editar">
+					      <span class="glyphicon glyphicon-pencil"></span>
+					    </button>
+
+					    <button type="button" class="btn btn-danger">
+					      <span class="glyphicon glyphicon-remove"></span>
+					    </button>
+					 </div>
+					 </div>
 
 
 
         </td>
+			</div>
+				</form>
       </tr>
 		<?php }; ?>
 		</tbody>

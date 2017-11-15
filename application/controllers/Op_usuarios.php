@@ -58,7 +58,9 @@ class Op_usuarios extends CI_Controller {
 	 }
 
 	 public function proximas(){
-
+		 $hoy = date("ymd");
+		 $dato["proximas"]=$this->Cita->listar_proximas($hoy);
+		 		$this->load->view('usuario/proximas_citas',$dato);
 	 }
 
 
