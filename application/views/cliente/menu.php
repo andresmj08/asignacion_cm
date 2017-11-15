@@ -20,6 +20,7 @@
 <script src="<?=base_url()?>assets/js/jquery.min.js"></script>
 <script src="<?=base_url()?>assets/js/moment.min.js"></script>
 <script src="<?=base_url()?>assets/js/fullcalendar.js"></script>
+<script src="<?=base_url()?>assets/js/es.js"></script>
 
 <script>
 	$(document).ready(function(){
