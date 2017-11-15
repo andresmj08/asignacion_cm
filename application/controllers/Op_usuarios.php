@@ -60,7 +60,11 @@ class Op_usuarios extends CI_Controller {
 	 public function proximas(){
 		 $hoy = date("ymd");
 		 $dato["proximas"]=$this->Cita->listar_proximas($hoy);
-		 		$this->load->view('usuario/proximas_citas',$dato);
+		 $this->load->view('usuario/proximas_citas',$dato);
+	 }
+	 public function historico(){
+		 $dato["todas"]=$this->Cita->listar();
+		 $this->load->view('usuario/historico',$dato);
 	 }
 
 
@@ -77,6 +81,15 @@ class Op_usuarios extends CI_Controller {
 		 $this->Operarios->agregar($combo);
 		 redirect('Op_usuarios/ver_tecnicos');
 
+	 }
+
+	 ///////////////////////// CONSULTAS /////////////////////
+	 public function consultas(){
+		 $this->load->view('usuario/consultas');
+	 }
+
+	 public function ver_tercero(){
+		 $this->load->view('usuario/consulta_tercero');
 	 }
 
 }

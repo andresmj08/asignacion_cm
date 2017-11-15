@@ -45,4 +45,10 @@ class Cita extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function listar(){
+		$this->db->from('cita');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 }

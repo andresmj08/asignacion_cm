@@ -21,7 +21,7 @@
 
 <body>
 	<div class="page-header">
-		<form action="<?=base_url()?>index.php/Op_usuarios"><input type="submit" id="volver" class="btn btn-danger" value="Regresar"></input></form>
+		<form action="<?=base_url()?>index.php/Op_usuarios/consultas"><input type="submit" id="volver" class="btn btn-danger" value="Regresar"></input></form>
 	</div>
 
 </div>

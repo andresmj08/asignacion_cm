@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="<?=base_url()?>uploads/favicon.ico" type="image/gif">
-<title>Gestion Citas</title>
+<title>Historico</title>
 
 <!-- Bootstrap -->
 <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet">
@@ -23,17 +23,51 @@
 
 <body>
 
-  <div class="page-header">
-		<form action="<?=base_url()?>index.php/Op_usuarios"><input type="submit" id="volver" class="btn btn-danger" value="Regresar"></input></form>
-	</div>
-	<div class="container">
+	<form action="<?=base_url()?>index.php/Op_usuarios/gestion_citas"><input type="submit" id="volver" class="btn btn-danger" value="Regresar"></input></form>
 
-		<a href="historico"><button type="button" class="btn btn-info btn-lg btn-block">Historico de Citas</button></a>
-		<a href="proximas"><button type="button" class="btn btn-default btn-lg btn-block">Proximas Citas</button></a>
-		
+<div class="container">
+
+	<div class="panel panel-default">
+
+	  <div class="panel-heading">Historico</div>
+
+	  <table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Codigio</th>
+				<th>Fecha</th>
+				<th>Km</th>
+				<th>Estado</th>
+				<th>Placa</th>
+				<th>Cliente</th>
+
+			</tr>
+		</thead>
+		<tbody>
+	<?php foreach($todas as $valor){ ?>
+
+			<tr>
+
+				<td><?php echo $valor['Id_cita'];?></td>
+				<td><?php echo $valor['Fecha_inicial'];?></td>
+				<td><?php echo $valor['Kilometraje'];?></td>
+				<td><?php echo $valor['Estado'];?></td>
+				<td><?php echo $valor['Vehiculos_Placa'];?></td>
+				<td><?php echo $valor['Terceros_Nit'];?></td>
+
+			</tr>
+
+			<?php }; ?>
+		</tbody>
+	</table>
+</div>
+
+
 
 
 </div>
+
+
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
