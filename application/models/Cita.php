@@ -36,19 +36,24 @@ class Cita extends CI_Model {
 		$this->db->where('Cita_Id_cita', $dato);
 		return $this->db->delete('cita_tiene_operaciones');
 	}
-
-
-	public function listar_proximas($dato){
+	public function geteventos(){
+		$this->db->select('Id_cita id,Vehiculos_placa title,Fecha_inicial start,Fecha_final end');
 		$this->db->from('cita');
-		$this->db->where('Fecha_inicial <',$dato);
-		$query = $this->db->get();
-		return $query->result_array();
+		return $this->db->get()->result();
 	}
-
-	public function listar(){
-		$this->db->from('cita');
-		$query = $this->db->get();
-		return $query->result_array();
+	public function upevent($param){
+		$campos = array(
+			'Fecha_inicial'=> $param['fecin'],
+			'Fecha_final'=> $param['fecfi']
+		);
+		$this->db->where('Id_cita',$param['id']);
+		$this->db->update('cita',$campos);
+		
+		if($this->db->affected_rows() == 1){
+			return 1;
+		}else{
+			return 0;
+		}
 	}
 
 }

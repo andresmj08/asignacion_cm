@@ -6,12 +6,15 @@ class Op_Cliente extends CI_Controller {
 
 	function __construct() {
         	parent::__construct();
+			$this->load->model('cita');
     	}
 
 	public function index() {
 		//$this->load->model('Terceros');
+		//$this->load->model('Cita');
 		//$filtro['nit']= $this->Terceros->filtro($this->session->userdata('Nit'));
-		$this->load->view('cliente/menu');//,//$filtro);
+		//$this->load->helper('url');
+		$this->load->view('cliente/menu');
 
 	}
 
@@ -207,7 +210,17 @@ public function actualizar(){
 		}
 
 	}
+	public function geteventos(){
+		$r=$this->cita->geteventos();
+		echo json_encode($r);
+	}
 
-
+	public function upevent(){
+		$param['id'] = $this->input->post('id');
+		$param['fecin'] = $this->input->post('fecin');
+		$param['fecfi'] = $this->input->post('fecfi');
+		$r = $this->cita->upevent($param);
+		echo $r;
+	}
 
 }
