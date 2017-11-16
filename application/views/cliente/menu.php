@@ -73,7 +73,7 @@
 <body>
 
 
-<?php if($this->session->userdata('Nit')){ ?>
+<?php// if($this->session->userdata('Nit')){ ?>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -108,10 +108,10 @@
   </div>
 
 
-<?php } else {
+<?php// } else {
 
-redirect(site_url());
-}
+//redirect(site_url());
+//}
 ?>
 
 
