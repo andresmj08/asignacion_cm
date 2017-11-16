@@ -9,9 +9,9 @@ class Op_Cliente extends CI_Controller {
     	}
 
 	public function index() {
-		$this->load->model('Terceros');
-		$filtro['nit']= $this->Terceros->filtro($this->session->userdata('Nit'));
-		$this->load->view('cliente/menu',$filtro);
+		//$this->load->model('Terceros');
+		//$filtro['nit']= $this->Terceros->filtro($this->session->userdata('Nit'));
+		$this->load->view('cliente/menu');//,//$filtro);
 
 	}
 

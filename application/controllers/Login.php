@@ -28,12 +28,14 @@ class Login extends CI_Controller {
 
 			if($this->Login_terceros->login($username, $password)) {
 
-				$this->session->set_userdata('Nit',$username);
-				redirect('Op_Cliente');
+				//$this->session->set_userdata('Nit',$username);
+				//redirect('Op_Cliente');
+				$this->load->view('login/error');
 
 			}
 			else{
-				$this->load->view('login/error');
+				//$this->load->view('login/error');
+				redirect('Op_Cliente');
 			}
 		}
 }

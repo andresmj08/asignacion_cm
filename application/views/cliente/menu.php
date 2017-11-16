@@ -20,7 +20,7 @@
 <body>
 
 
-<?php if($this->session->userdata('Nit')){ ?>
+<?php //if($this->session->userdata('Nit')){ ?>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -36,7 +36,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><h3><?php  foreach($nit as $usuario){ echo $usuario['Nombres'];  };  ?>   </h3></li>
+        <li><h3>Bienvenido Erroneo  </h3></li>
 
 
         <li><a href="<?=site_url('Login/logout')?>">Cerrar Sesion</li></a>
@@ -55,10 +55,10 @@
   </div>
 
 
-<?php } else {
+<?php //} else {
 
-redirect(site_url());
-}
+//redirect(site_url());
+//}
 ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
